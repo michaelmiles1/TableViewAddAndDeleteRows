@@ -24,11 +24,30 @@ class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        tableView.register(UITableView.self, forCellReuseIdentifier: CELL_ID)
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: CELL_ID)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(resetFastFoods))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewFoods))
     }
 }
 
+// Data manipulation
+extension ViewController {
+    @objc private func addNewFoods() {
+        fastFoods.append(contentsOf: newFastFoods)
+        tableView.reloadData()
+    }
+    
+    @objc private func resetFastFoods() {
+        for r in newFastFoods {
+            fastFoods.removeAll { $0 == r }
+        }
+        tableView.reloadData()
+    }
+}
+
+// TableView methods
 extension ViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         fastFoods.count
