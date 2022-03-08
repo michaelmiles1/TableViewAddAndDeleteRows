@@ -11,15 +11,12 @@ class ViewController: UITableViewController {
     
     private let CELL_ID = "CELL_ID"
     
-    private var fastFoods = [
-        "McDonalds",
-        "Wendys",
-        "Burger King"
-    ]
+    private var oldData: [String]?
     
-    private var newFastFoods = [
-        "Chick-fil-A",
-        "Chipotle"
+    private var fastFoods = [
+        "Burger King",
+        "In-N-Out",
+        "Wendys"
     ]
 
     override func viewDidLoad() {
@@ -35,15 +32,29 @@ class ViewController: UITableViewController {
 // Data manipulation
 extension ViewController {
     @objc private func addNewFoods() {
-        fastFoods.append(contentsOf: newFastFoods)
-        tableView.reloadData()
+        oldData = fastFoods
+        fastFoods.append(contentsOf: ["Chick-fil-A", "McDonalds"])
+        fastFoods.sort()
+        animateReloadData()
     }
     
     @objc private func resetFastFoods() {
-        for r in newFastFoods {
+        oldData = fastFoods
+        for r in ["Chick-fil-A", "McDonalds"] {
             fastFoods.removeAll { $0 == r }
         }
         tableView.reloadData()
+    }
+    
+    private func animateReloadData() {
+        guard let old = oldData else { return }
+        var newIndexPaths: [IndexPath] = []
+        for fastFoodItem in fastFoods.enumerated() {
+            if !old.contains(fastFoodItem.element) {
+                newIndexPaths.append(IndexPath(row: fastFoodItem.offset, section: 0))
+            }
+        }
+        tableView.insertRows(at: newIndexPaths, with: .fade)
     }
 }
 
