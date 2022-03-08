@@ -43,18 +43,29 @@ extension ViewController {
         for r in ["Chick-fil-A", "McDonalds"] {
             fastFoods.removeAll { $0 == r }
         }
-        tableView.reloadData()
+        animateReloadData()
     }
     
     private func animateReloadData() {
         guard let old = oldData else { return }
-        var newIndexPaths: [IndexPath] = []
-        for fastFoodItem in fastFoods.enumerated() {
-            if !old.contains(fastFoodItem.element) {
-                newIndexPaths.append(IndexPath(row: fastFoodItem.offset, section: 0))
+        if old.count < fastFoods.count {
+            var newIndexPaths: [IndexPath] = []
+            for fastFoodItem in fastFoods.enumerated() {
+                if !old.contains(fastFoodItem.element) {
+                    newIndexPaths.append(IndexPath(row: fastFoodItem.offset, section: 0))
+                }
             }
+            tableView.insertRows(at: newIndexPaths, with: .fade)
         }
-        tableView.insertRows(at: newIndexPaths, with: .fade)
+        else if old.count > fastFoods.count {
+            var removedIndexPaths: [IndexPath] = []
+            for oldItem in old.enumerated() {
+                if !fastFoods.contains(oldItem.element) {
+                    removedIndexPaths.append(IndexPath(row: oldItem.offset, section: 0))
+                }
+            }
+            tableView.deleteRows(at: removedIndexPaths, with: .fade)
+        }
     }
 }
 
