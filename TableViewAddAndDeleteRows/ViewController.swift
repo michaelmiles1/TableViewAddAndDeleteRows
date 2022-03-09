@@ -58,7 +58,7 @@ extension ViewController {
         }
     }
     
-    private func indexPathsForNewItems(bigArray: [String], smallArray: [String]) -> [IndexPath] {
+    func indexPathsForNewItems(bigArray: [String], smallArray: [String]) -> [IndexPath] {
         var newIndexPaths: [IndexPath] = []
         for str in bigArray.enumerated() {
             if !smallArray.contains(str.element) {
@@ -68,7 +68,7 @@ extension ViewController {
         return newIndexPaths
     }
     
-    private func alternateIndexPathsForNewItems(bigArray: [String], smallArray: [String]) -> [IndexPath] {
+    func alternateIndexPathsForNewItems(bigArray: [String], smallArray: [String]) -> [IndexPath] {
         var newIndexPaths: [IndexPath] = []
         for str in bigArray {
             if !smallArray.contains(str) {

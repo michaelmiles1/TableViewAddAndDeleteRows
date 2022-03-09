@@ -12,7 +12,18 @@
 		5C9F39E827D7FC8600122CD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C9F39E627D7FC8600122CD9 /* Main.storyboard */; };
 		5C9F39EA27D7FC9000122CD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C9F39E927D7FC9000122CD9 /* Assets.xcassets */; };
 		5C9F39ED27D7FC9000122CD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C9F39EB27D7FC9000122CD9 /* LaunchScreen.storyboard */; };
+		5C9F39FD27D8FA0000122CD9 /* TableViewAddAndDeleteRowsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9F39FC27D8FA0000122CD9 /* TableViewAddAndDeleteRowsTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5C9F39FE27D8FA0000122CD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C9F39D527D7FC8600122CD9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C9F39DC27D7FC8600122CD9;
+			remoteInfo = TableViewAddAndDeleteRows;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5C9F39DD27D7FC8600122CD9 /* TableViewAddAndDeleteRows.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewAddAndDeleteRows.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +33,19 @@
 		5C9F39E927D7FC9000122CD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C9F39EC27D7FC9000122CD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C9F39EE27D7FC9000122CD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C9F39FA27D8FA0000122CD9 /* TableViewAddAndDeleteRowsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableViewAddAndDeleteRowsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C9F39FC27D8FA0000122CD9 /* TableViewAddAndDeleteRowsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAddAndDeleteRowsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5C9F39DA27D7FC8600122CD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C9F39F727D8FA0000122CD9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				5C9F39DF27D7FC8600122CD9 /* TableViewAddAndDeleteRows */,
+				5C9F39FB27D8FA0000122CD9 /* TableViewAddAndDeleteRowsTests */,
 				5C9F39DE27D7FC8600122CD9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				5C9F39DD27D7FC8600122CD9 /* TableViewAddAndDeleteRows.app */,
+				5C9F39FA27D8FA0000122CD9 /* TableViewAddAndDeleteRowsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,6 +84,14 @@
 				5C9F39EE27D7FC9000122CD9 /* Info.plist */,
 			);
 			path = TableViewAddAndDeleteRows;
+			sourceTree = "<group>";
+		};
+		5C9F39FB27D8FA0000122CD9 /* TableViewAddAndDeleteRowsTests */ = {
+			isa = PBXGroup;
+			children = (
+				5C9F39FC27D8FA0000122CD9 /* TableViewAddAndDeleteRowsTests.swift */,
+			);
+			path = TableViewAddAndDeleteRowsTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +114,24 @@
 			productReference = 5C9F39DD27D7FC8600122CD9 /* TableViewAddAndDeleteRows.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5C9F39F927D8FA0000122CD9 /* TableViewAddAndDeleteRowsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C9F3A0027D8FA0000122CD9 /* Build configuration list for PBXNativeTarget "TableViewAddAndDeleteRowsTests" */;
+			buildPhases = (
+				5C9F39F627D8FA0000122CD9 /* Sources */,
+				5C9F39F727D8FA0000122CD9 /* Frameworks */,
+				5C9F39F827D8FA0000122CD9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C9F39FF27D8FA0000122CD9 /* PBXTargetDependency */,
+			);
+			name = TableViewAddAndDeleteRowsTests;
+			productName = TableViewAddAndDeleteRowsTests;
+			productReference = 5C9F39FA27D8FA0000122CD9 /* TableViewAddAndDeleteRowsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -96,6 +144,10 @@
 				TargetAttributes = {
 					5C9F39DC27D7FC8600122CD9 = {
 						CreatedOnToolsVersion = 13.2.1;
+					};
+					5C9F39F927D8FA0000122CD9 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 5C9F39DC27D7FC8600122CD9;
 					};
 				};
 			};
@@ -113,6 +165,7 @@
 			projectRoot = "";
 			targets = (
 				5C9F39DC27D7FC8600122CD9 /* TableViewAddAndDeleteRows */,
+				5C9F39F927D8FA0000122CD9 /* TableViewAddAndDeleteRowsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +181,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5C9F39F827D8FA0000122CD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -140,7 +200,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5C9F39F627D8FA0000122CD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C9F39FD27D8FA0000122CD9 /* TableViewAddAndDeleteRowsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5C9F39FF27D8FA0000122CD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C9F39DC27D7FC8600122CD9 /* TableViewAddAndDeleteRows */;
+			targetProxy = 5C9F39FE27D8FA0000122CD9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5C9F39E627D7FC8600122CD9 /* Main.storyboard */ = {
@@ -334,6 +410,42 @@
 			};
 			name = Release;
 		};
+		5C9F3A0127D8FA0000122CD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 757N5X329U;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.michaelmiles.TableViewAddAndDeleteRowsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TableViewAddAndDeleteRows.app/TableViewAddAndDeleteRows";
+			};
+			name = Debug;
+		};
+		5C9F3A0227D8FA0000122CD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 757N5X329U;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.michaelmiles.TableViewAddAndDeleteRowsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TableViewAddAndDeleteRows.app/TableViewAddAndDeleteRows";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -351,6 +463,15 @@
 			buildConfigurations = (
 				5C9F39F227D7FC9000122CD9 /* Debug */,
 				5C9F39F327D7FC9000122CD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C9F3A0027D8FA0000122CD9 /* Build configuration list for PBXNativeTarget "TableViewAddAndDeleteRowsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C9F3A0127D8FA0000122CD9 /* Debug */,
+				5C9F3A0227D8FA0000122CD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
