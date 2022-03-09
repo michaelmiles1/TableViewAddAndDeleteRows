@@ -49,23 +49,23 @@ extension ViewController {
     private func animateReloadData() {
         guard let old = oldData else { return }
         if old.count < fastFoods.count {
-            var newIndexPaths: [IndexPath] = []
-            for fastFoodItem in fastFoods.enumerated() {
-                if !old.contains(fastFoodItem.element) {
-                    newIndexPaths.append(IndexPath(row: fastFoodItem.offset, section: 0))
-                }
-            }
-            tableView.insertRows(at: newIndexPaths, with: .fade)
+            let indexPaths = indexPathsForNewItems(bigArray: fastFoods, smallArray: old)
+            tableView.insertRows(at: indexPaths, with: .fade)
         }
         else if old.count > fastFoods.count {
-            var removedIndexPaths: [IndexPath] = []
-            for oldItem in old.enumerated() {
-                if !fastFoods.contains(oldItem.element) {
-                    removedIndexPaths.append(IndexPath(row: oldItem.offset, section: 0))
-                }
-            }
+            let removedIndexPaths = indexPathsForNewItems(bigArray: old, smallArray: fastFoods)
             tableView.deleteRows(at: removedIndexPaths, with: .fade)
         }
+    }
+    
+    private func indexPathsForNewItems(bigArray: [String], smallArray: [String]) -> [IndexPath] {
+        var newIndexPaths: [IndexPath] = []
+        for str in bigArray.enumerated() {
+            if !smallArray.contains(str.element) {
+                newIndexPaths.append(IndexPath(row: str.offset, section: 0))
+            }
+        }
+        return newIndexPaths
     }
 }
 
