@@ -53,7 +53,7 @@ extension ViewController {
             tableView.insertRows(at: indexPaths, with: .fade)
         }
         else if old.count > fastFoods.count {
-            let removedIndexPaths = alternateIndexPathsForNewItems(bigArray: old, smallArray: fastFoods)
+            let removedIndexPaths = useArrayDifferenceForNewItems(bigArray: old, smallArray: fastFoods)
             tableView.deleteRows(at: removedIndexPaths, with: .fade)
         }
     }
@@ -78,6 +78,20 @@ extension ViewController {
             }
         }
         return newIndexPaths
+    }
+    
+    func useArrayDifferenceForNewItems(bigArray: [String], smallArray: [String]) -> [IndexPath] {
+        let difference = bigArray.difference(from: smallArray)
+        var ret: [IndexPath] = []
+        for change in difference {
+            switch change {
+            case .remove(offset: _, element: _, _):
+                return []
+            case let .insert(offset: off, element: _, _):
+                ret.append(IndexPath(row: off, section: 0))
+            }
+        }
+        return ret
     }
 }
 
